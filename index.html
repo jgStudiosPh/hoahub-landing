@@ -9,14 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
-    /* ── Reset & Base ───────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --navy:   #1B2A4A;
       --navy-light: #243660;
-      --gold:   #F5A623;
-      --gold-dark: #d98f0f;
+      --teal:   #00c4a7;
+      --teal-dark: #009688;
       --white:  #FFFFFF;
       --off-white: #F7F8FC;
       --gray-100: #EEF0F6;
@@ -50,7 +49,6 @@
     img { display: block; max-width: 100%; }
     a { text-decoration: none; color: inherit; }
 
-    /* ── Scroll Animations ──────────────────────── */
     .reveal {
       opacity: 0;
       transform: translateY(28px);
@@ -67,7 +65,6 @@
     .reveal-delay-5 { transition-delay: 0.5s; }
     .reveal-delay-6 { transition-delay: 0.6s; }
 
-    /* ── Utility ────────────────────────────────── */
     .container {
       width: 100%;
       max-width: 1100px;
@@ -81,7 +78,7 @@
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--teal);
       margin-bottom: 12px;
     }
 
@@ -99,8 +96,8 @@
 
     .btn-primary {
       display: inline-block;
-      background: var(--gold);
-      color: var(--navy);
+      background: var(--teal);
+      color: var(--white);
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
       font-size: 1rem;
@@ -109,17 +106,16 @@
       border: none;
       cursor: pointer;
       transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-      box-shadow: 0 4px 16px rgba(245,166,35,0.35);
+      box-shadow: 0 4px 16px rgba(0,196,167,0.35);
       white-space: nowrap;
     }
     .btn-primary:hover {
-      background: var(--gold-dark);
+      background: var(--teal-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(245,166,35,0.45);
+      box-shadow: 0 8px 24px rgba(0,196,167,0.45);
     }
     .btn-primary:active { transform: translateY(0); }
 
-    /* ── Navbar ─────────────────────────────────── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -145,7 +141,7 @@
       letter-spacing: -0.02em;
     }
 
-    .nav-logo span { color: var(--gold); }
+    .nav-logo span { color: var(--teal); }
 
     .nav-links {
       display: flex;
@@ -162,8 +158,8 @@
     .nav-links a:hover { color: var(--white); }
 
     .nav-cta {
-      background: var(--gold);
-      color: var(--navy) !important;
+      background: var(--teal);
+      color: var(--white) !important;
       font-weight: 700 !important;
       padding: 9px 22px;
       border-radius: 50px;
@@ -171,7 +167,7 @@
       font-size: 0.85rem !important;
       transition: background var(--transition) !important;
     }
-    .nav-cta:hover { background: var(--gold-dark) !important; }
+    .nav-cta:hover { background: var(--teal-dark) !important; }
 
     .hamburger {
       display: none;
@@ -194,7 +190,6 @@
       .hamburger { display: flex; }
     }
 
-    /* ── Hero Section ───────────────────────────── */
     #hero {
       background: linear-gradient(145deg, var(--navy) 0%, #0F1C35 60%, #162240 100%);
       min-height: 100svh;
@@ -210,8 +205,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(245,166,35,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(245,166,35,0.04) 1px, transparent 1px);
+        linear-gradient(rgba(0,196,167,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,196,167,0.04) 1px, transparent 1px);
       background-size: 48px 48px;
       pointer-events: none;
     }
@@ -223,7 +218,7 @@
       right: -120px;
       width: 480px;
       height: 480px;
-      background: radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(0,196,167,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -237,8 +232,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(245,166,35,0.12);
-      border: 1px solid rgba(245,166,35,0.25);
+      background: rgba(0,196,167,0.12);
+      border: 1px solid rgba(0,196,167,0.25);
       border-radius: 50px;
       padding: 7px 16px;
       margin-bottom: 28px;
@@ -248,7 +243,7 @@
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--gold);
+      background: var(--teal);
       animation: pulse 2s infinite;
     }
 
@@ -260,7 +255,7 @@
     .hero-badge span {
       font-size: 0.8rem;
       font-weight: 600;
-      color: var(--gold);
+      color: var(--teal);
       letter-spacing: 0.04em;
     }
 
@@ -272,7 +267,7 @@
       margin-bottom: 20px;
     }
 
-    .hero-title span { color: var(--gold); }
+    .hero-title span { color: var(--teal); }
 
     .hero-subtitle {
       font-size: clamp(1rem, 2.5vw, 1.2rem);
@@ -313,7 +308,7 @@
       font-family: 'Poppins', sans-serif;
       font-size: 1.8rem;
       font-weight: 700;
-      color: var(--gold);
+      color: var(--teal);
       line-height: 1;
       margin-bottom: 4px;
     }
@@ -323,7 +318,6 @@
       color: rgba(255,255,255,0.5);
     }
 
-    /* ── Pain Points ────────────────────────────── */
     #pain {
       background: var(--off-white);
       padding: 96px 0;
@@ -356,7 +350,7 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 3px;
-      background: var(--gold);
+      background: var(--teal);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform var(--transition);
@@ -372,7 +366,7 @@
       width: 52px;
       height: 52px;
       border-radius: 14px;
-      background: rgba(245,166,35,0.1);
+      background: rgba(0,196,167,0.1);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -393,7 +387,6 @@
       line-height: 1.65;
     }
 
-    /* ── Features Section ───────────────────────── */
     #features {
       padding: 96px 0;
       background: var(--white);
@@ -420,7 +413,7 @@
     }
 
     .feature-tile:hover {
-      border-color: rgba(245,166,35,0.4);
+      border-color: rgba(0,196,167,0.4);
       box-shadow: var(--shadow-md);
       transform: translateY(-3px);
     }
@@ -456,15 +449,14 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      background: rgba(245,166,35,0.12);
-      color: var(--gold-dark);
-      border: 1px solid rgba(245,166,35,0.3);
+      background: rgba(0,196,167,0.12);
+      color: var(--teal-dark);
+      border: 1px solid rgba(0,196,167,0.3);
       border-radius: 50px;
       padding: 3px 10px;
       margin-top: 10px;
     }
 
-    /* ── How It Works ───────────────────────────── */
     #how {
       padding: 96px 0;
       background: var(--navy);
@@ -477,8 +469,8 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(245,166,35,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(245,166,35,0.03) 1px, transparent 1px);
+        linear-gradient(rgba(0,196,167,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,196,167,0.03) 1px, transparent 1px);
       background-size: 48px 48px;
     }
 
@@ -504,7 +496,7 @@
       align-items: center;
       justify-content: center;
       padding-top: 40px;
-      color: rgba(245,166,35,0.4);
+      color: rgba(0,196,167,0.4);
       font-size: 1.4rem;
     }
 
@@ -517,8 +509,8 @@
       width: 56px;
       height: 56px;
       border-radius: 50%;
-      border: 2px solid var(--gold);
-      background: rgba(245,166,35,0.08);
+      border: 2px solid var(--teal);
+      background: rgba(0,196,167,0.08);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -526,7 +518,7 @@
       font-family: 'Poppins', sans-serif;
       font-weight: 800;
       font-size: 1.2rem;
-      color: var(--gold);
+      color: var(--teal);
       position: relative;
     }
 
@@ -568,7 +560,6 @@
       }
     }
 
-    /* ── Social Proof ───────────────────────────── */
     #proof {
       padding: 96px 0;
       background: var(--off-white);
@@ -602,7 +593,7 @@
     }
 
     .star {
-      color: var(--gold);
+      color: var(--teal);
       font-size: 1rem;
     }
 
@@ -645,7 +636,6 @@
       color: var(--gray-500);
     }
 
-    /* ── Waitlist CTA ────────────────────────────── */
     #waitlist {
       padding: 96px 0;
       background: var(--white);
@@ -666,7 +656,7 @@
       top: -80px; right: -80px;
       width: 320px; height: 320px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(245,166,35,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(0,196,167,0.15) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -676,7 +666,7 @@
       bottom: -60px; left: -60px;
       width: 240px; height: 240px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(0,196,167,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -690,7 +680,7 @@
       letter-spacing: -0.02em;
     }
 
-    .waitlist-title span { color: var(--gold); }
+    .waitlist-title span { color: var(--teal); }
 
     .waitlist-subtitle {
       font-size: 1rem;
@@ -723,7 +713,7 @@
     .waitlist-form input::placeholder { color: rgba(255,255,255,0.35); }
 
     .waitlist-form input:focus {
-      border-color: rgba(245,166,35,0.6);
+      border-color: rgba(0,196,167,0.6);
       background: rgba(255,255,255,0.1);
     }
 
@@ -731,21 +721,21 @@
       width: 100%;
       padding: 17px 24px;
       border-radius: 12px;
-      background: var(--gold);
-      color: var(--navy);
+      background: var(--teal);
+      color: var(--white);
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
       font-size: 1rem;
       border: none;
       cursor: pointer;
       transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-      box-shadow: 0 4px 20px rgba(245,166,35,0.4);
+      box-shadow: 0 4px 20px rgba(0,196,167,0.4);
     }
 
     .waitlist-form button:hover {
-      background: var(--gold-dark);
+      background: var(--teal-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(245,166,35,0.5);
+      box-shadow: 0 8px 28px rgba(0,196,167,0.5);
     }
 
     .waitlist-fine-print {
@@ -762,12 +752,11 @@
       font-weight: 500;
     }
 
-    /* Success state */
     .form-success {
       display: none;
       padding: 28px;
-      background: rgba(245,166,35,0.1);
-      border: 1px solid rgba(245,166,35,0.3);
+      background: rgba(0,196,167,0.1);
+      border: 1px solid rgba(0,196,167,0.3);
       border-radius: 16px;
       max-width: 480px;
       margin: 0 auto;
@@ -775,7 +764,7 @@
 
     .form-success h3 {
       font-size: 1.2rem;
-      color: var(--gold);
+      color: var(--teal);
       margin-bottom: 8px;
     }
 
@@ -784,7 +773,6 @@
       color: rgba(255,255,255,0.65);
     }
 
-    /* ── Footer ─────────────────────────────────── */
     footer {
       background: #0D1829;
       padding: 48px 0 32px;
@@ -806,7 +794,7 @@
       color: var(--white);
     }
 
-    .footer-logo span { color: var(--gold); }
+    .footer-logo span { color: var(--teal); }
 
     .footer-logo small {
       display: block;
@@ -829,7 +817,7 @@
       color: rgba(255,255,255,0.45);
       transition: color var(--transition);
     }
-    .footer-links a:hover { color: var(--gold); }
+    .footer-links a:hover { color: var(--teal); }
 
     .footer-social {
       display: flex;
@@ -850,8 +838,8 @@
       transition: background var(--transition), color var(--transition);
     }
     .social-btn:hover {
-      background: rgba(245,166,35,0.15);
-      color: var(--gold);
+      background: rgba(0,196,167,0.15);
+      color: var(--teal);
     }
 
     .footer-copyright {
@@ -859,7 +847,6 @@
       color: rgba(255,255,255,0.25);
     }
 
-    /* ── Responsive Adjustments ─────────────────── */
     @media (max-width: 768px) {
       .waitlist-card { padding: 44px 24px; }
       .hero-stats { gap: 24px; }
@@ -871,7 +858,6 @@
       .btn-primary { width: 100%; text-align: center; }
     }
 
-    /* ── Mobile Nav Drawer ──────────────────────── */
     .mobile-nav {
       display: none;
       position: fixed;
@@ -903,7 +889,6 @@
 </head>
 <body>
 
-  <!-- ── NAVBAR ────────────────────────────── -->
   <nav>
     <div class="container nav-inner">
       <a href="#" class="nav-logo">HOA<span>Hub</span></a>
@@ -919,7 +904,6 @@
     </div>
   </nav>
 
-  <!-- Mobile Navigation -->
   <div class="mobile-nav" id="mobileNav">
     <a href="#pain" onclick="closeNav()">Problems</a>
     <a href="#features" onclick="closeNav()">Features</a>
@@ -927,7 +911,6 @@
     <a href="#waitlist" class="nav-cta" onclick="closeNav()">Join Waitlist</a>
   </div>
 
-  <!-- ── HERO ──────────────────────────────── -->
   <section id="hero">
     <div class="container">
       <div class="hero-content">
@@ -966,7 +949,6 @@
     </div>
   </section>
 
-  <!-- ── PAIN POINTS ───────────────────────── -->
   <section id="pain">
     <div class="container">
       <div class="pain-header reveal">
@@ -996,7 +978,6 @@
     </div>
   </section>
 
-  <!-- ── FEATURES ──────────────────────────── -->
   <section id="features">
     <div class="container">
       <div class="features-header reveal">
@@ -1042,11 +1023,10 @@
     </div>
   </section>
 
-  <!-- ── HOW IT WORKS ──────────────────────── -->
   <section id="how">
     <div class="container">
       <div class="how-header reveal">
-        <div class="section-label" style="color:var(--gold)">How It Works</div>
+        <div class="section-label" style="color:var(--teal)">How It Works</div>
         <h2 class="section-title">From request to resolution<br />in three simple steps.</h2>
         <p class="section-subtitle">No training required. Works on any Android or iPhone.</p>
       </div>
@@ -1079,7 +1059,6 @@
     </div>
   </section>
 
-  <!-- ── SOCIAL PROOF ──────────────────────── -->
   <section id="proof">
     <div class="container">
       <div class="proof-header reveal">
@@ -1131,12 +1110,11 @@
     </div>
   </section>
 
-  <!-- ── WAITLIST CTA ───────────────────────── -->
   <section id="waitlist">
     <div class="container">
       <div class="waitlist-card reveal">
         <div class="waitlist-content">
-          <div class="section-label" style="color:var(--gold)">Early Access</div>
+          <div class="section-label" style="color:var(--teal)">Early Access</div>
           <h2 class="waitlist-title">
             Be the first HOA in your city<br />to go <span>fully digital.</span>
           </h2>
@@ -1144,7 +1122,6 @@
             Join the waitlist today. No commitment, no credit card required.
           </p>
 
-          <!-- Mailchimp Form -->
           <form
             action="https://github.us6.list-manage.com/subscribe/post?u=316454f4c3240f60bfbe15b77&amp;id=47c55f009e&amp;f_id=00c1d0e5f0"
             method="post"
@@ -1153,7 +1130,6 @@
             class="waitlist-form validate"
             target="_blank"
           >
-            <!-- Mailchimp anti-bot honeypot — do NOT remove -->
             <div style="position: absolute; left: -5000px;" aria-hidden="true">
               <input type="text" name="b_316454f4c3240f60bfbe15b77_47c55f009e" tabindex="-1" value="">
             </div>
@@ -1175,7 +1151,6 @@
             <button type="submit" name="subscribe">Reserve My Spot →</button>
           </form>
 
-          <!-- Success message -->
           <div class="form-success" id="formSuccess">
             <h3>🎉 You're on the list!</h3>
             <p>We'll reach out as soon as HOAHub is ready for your community. Watch your inbox.</p>
@@ -1190,7 +1165,6 @@
     </div>
   </section>
 
-  <!-- ── FOOTER ─────────────────────────────── -->
   <footer>
     <div class="container footer-inner">
       <div class="footer-logo">
@@ -1213,9 +1187,7 @@
     </div>
   </footer>
 
-  <!-- ── JAVASCRIPT ─────────────────────────── -->
   <script>
-    // ── Hamburger Menu ──────────────────────
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
 
@@ -1240,7 +1212,6 @@
       }
     });
 
-    // ── Scroll Reveal ──────────────────────
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1254,12 +1225,10 @@
     reveals.forEach(el => observer.observe(el));
     document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
 
-    // ── Waitlist Form — Mailchimp with in-page success state ──
     const form = document.getElementById('waitlistForm');
     const successMsg = document.getElementById('formSuccess');
 
     form.addEventListener('submit', () => {
-      // Let Mailchimp open in new tab, show success message immediately
       const btn = form.querySelector('button[type="submit"]');
       btn.textContent = 'Reserving...';
       btn.disabled = true;
@@ -1269,7 +1238,6 @@
       }, 400);
     });
 
-    // ── Smooth active nav link on scroll ───
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
 
@@ -1281,7 +1249,7 @@
       });
       navLinks.forEach(link => {
         link.style.color = '';
-        if (link.getAttribute('href') === '#' + current) link.style.color = 'var(--gold)';
+        if (link.getAttribute('href') === '#' + current) link.style.color = 'var(--teal)';
       });
     }, { passive: true });
   </script>
