@@ -205,7 +205,6 @@
       overflow: hidden;
     }
 
-    /* Subtle background grid pattern */
     #hero::before {
       content: '';
       position: absolute;
@@ -217,7 +216,6 @@
       pointer-events: none;
     }
 
-    /* Gold glow orb */
     #hero::after {
       content: '';
       position: absolute;
@@ -708,7 +706,8 @@
       margin: 0 auto 24px;
     }
 
-    .waitlist-form input {
+    .waitlist-form input[type="text"],
+    .waitlist-form input[type="email"] {
       width: 100%;
       padding: 16px 20px;
       border-radius: 12px;
@@ -1052,33 +1051,24 @@
         <p class="section-subtitle">No training required. Works on any Android or iPhone.</p>
       </div>
       <div class="steps">
-        <!-- Step 1 -->
         <div class="step reveal reveal-delay-1">
           <div class="step-icon">📲</div>
           <div class="step-number">1</div>
           <h3>Homeowner submits a request</h3>
           <p>Via the HOAHub mobile app — gate pass, document, dues payment, or anything the HOA offers. Takes under two minutes.</p>
         </div>
-
-        <!-- Connector -->
         <div class="step-connector reveal">
           <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </div>
-
-        <!-- Step 2 -->
         <div class="step reveal reveal-delay-2">
           <div class="step-icon">🖥️</div>
           <div class="step-number">2</div>
           <h3>HOA staff reviews &amp; processes</h3>
           <p>Staff log in to the web dashboard, see all pending requests in one place, and act on them — no more digging through chats or logbooks.</p>
         </div>
-
-        <!-- Connector -->
         <div class="step-connector reveal">
           <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </div>
-
-        <!-- Step 3 -->
         <div class="step reveal reveal-delay-3">
           <div class="step-icon">✅</div>
           <div class="step-number">3</div>
@@ -1098,7 +1088,6 @@
         <p class="section-subtitle">Early adopters are already seeing the difference. Here's what they're saying.</p>
       </div>
       <div class="testimonials-grid">
-        <!-- Testimonial 1 -->
         <div class="testimonial-card reveal reveal-delay-1">
           <div class="testimonial-stars">
             <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
@@ -1112,7 +1101,6 @@
             </div>
           </div>
         </div>
-        <!-- Testimonial 2 -->
         <div class="testimonial-card reveal reveal-delay-2">
           <div class="testimonial-stars">
             <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
@@ -1126,7 +1114,6 @@
             </div>
           </div>
         </div>
-        <!-- Testimonial 3 -->
         <div class="testimonial-card reveal reveal-delay-3">
           <div class="testimonial-stars">
             <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
@@ -1157,35 +1144,37 @@
             Join the waitlist today. No commitment, no credit card required.
           </p>
 
-          <!-- Netlify Form -->
+          <!-- Mailchimp Form -->
           <form
-            name="hoahub-waitlist"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            class="waitlist-form"
+            action="https://github.us6.list-manage.com/subscribe/post?u=316454f4c3240f60bfbe15b77&amp;id=47c55f009e&amp;f_id=00c1d0e5f0"
+            method="post"
             id="waitlistForm"
+            name="mc-embedded-subscribe-form"
+            class="waitlist-form validate"
+            target="_blank"
           >
-            <input type="hidden" name="form-name" value="hoahub-waitlist" />
-            <input type="text" name="bot-field" style="display:none" />
+            <!-- Mailchimp anti-bot honeypot — do NOT remove -->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="b_316454f4c3240f60bfbe15b77_47c55f009e" tabindex="-1" value="">
+            </div>
             <input
               type="text"
-              name="name"
+              name="FNAME"
               placeholder="Your full name"
               required
               autocomplete="name"
             />
             <input
               type="email"
-              name="email"
+              name="EMAIL"
               placeholder="Your email address"
               required
               autocomplete="email"
             />
-            <button type="submit">Reserve My Spot →</button>
+            <button type="submit" name="subscribe">Reserve My Spot →</button>
           </form>
 
-          <!-- Success message (shown after JS intercept) -->
+          <!-- Success message -->
           <div class="form-success" id="formSuccess">
             <h3>🎉 You're on the list!</h3>
             <p>We'll reach out as soon as HOAHub is ready for your community. Watch your inbox.</p>
@@ -1207,23 +1196,18 @@
         HOA<span>Hub</span>
         <small>by JGStudios</small>
       </div>
-
       <div class="footer-links">
         <a href="#">Privacy Policy</a>
         <a href="mailto:hello@hoahub.ph">Contact</a>
       </div>
-
       <div class="footer-social">
-        <!-- Instagram icon -->
         <a href="#" class="social-btn" aria-label="Instagram">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </a>
-        <!-- Facebook icon -->
         <a href="#" class="social-btn" aria-label="Facebook">
           <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
       </div>
-
       <p class="footer-copyright">© 2025 HOAHub by JGStudios. All rights reserved.</p>
     </div>
   </footer>
@@ -1249,16 +1233,14 @@
       mobileNav.classList.remove('open');
     }
 
-    // Close mobile nav on outside click
     document.addEventListener('click', (e) => {
       if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) {
         mobileNav.classList.remove('open');
       }
     });
 
-    // ── Scroll Reveal (Intersection Observer) ──
+    // ── Scroll Reveal ──────────────────────
     const reveals = document.querySelectorAll('.reveal');
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1266,49 +1248,24 @@
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.12,
-      rootMargin: '0px 0px -40px 0px'
-    });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     reveals.forEach(el => observer.observe(el));
+    document.querySelectorAll('#hero .reveal').forEach(el => el.classList.add('visible'));
 
-    // Trigger hero elements immediately (above fold)
-    document.querySelectorAll('#hero .reveal').forEach(el => {
-      el.classList.add('visible');
-    });
-
-    // ── Waitlist Form — Netlify-compatible with JS enhancement ──
+    // ── Waitlist Form — Mailchimp with in-page success state ──
     const form = document.getElementById('waitlistForm');
     const successMsg = document.getElementById('formSuccess');
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
+    form.addEventListener('submit', () => {
+      // Let Mailchimp open in new tab, show success message immediately
       const btn = form.querySelector('button[type="submit"]');
       btn.textContent = 'Reserving...';
       btn.disabled = true;
-
-      const data = new FormData(form);
-
-      try {
-        const res = await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(data).toString()
-        });
-
-        if (res.ok) {
-          form.style.display = 'none';
-          successMsg.style.display = 'block';
-        } else {
-          // Fallback: submit naturally if Netlify not configured
-          form.submit();
-        }
-      } catch {
-        // Network error — submit natively so data isn't lost
-        form.submit();
-      }
+      setTimeout(() => {
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+      }, 400);
     });
 
     // ── Smooth active nav link on scroll ───
@@ -1319,15 +1276,11 @@
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute('id');
-        }
+        if (pageYOffset >= sectionTop) current = section.getAttribute('id');
       });
       navLinks.forEach(link => {
         link.style.color = '';
-        if (link.getAttribute('href') === '#' + current) {
-          link.style.color = 'var(--gold)';
-        }
+        if (link.getAttribute('href') === '#' + current) link.style.color = 'var(--gold)';
       });
     }, { passive: true });
   </script>
