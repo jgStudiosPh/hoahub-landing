@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HOAHub — Support</title>
+  <meta name="description" content="Help and support for HOAHub, the community-management app for Philippine homeowners' associations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1B3A5C;
+      --navy-deep: #142B44;
+      --teal: #00B4B4;
+      --teal-ink: #008C8C;
+      --bg: #F7F5F2;
+      --surface: #FFFFFF;
+      --ink: #1A2733;
+      --muted: #5E6976;
+      --border: #E6E1DA;
+      --font: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--teal-ink); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ---- header ---- */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .bar {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+    .mark {
+      width: 26px; height: 26px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--navy), var(--teal));
+      display: inline-block;
+    }
+    .bar nav a {
+      color: var(--muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-left: 1.4rem;
+    }
+    .bar nav a:hover { color: var(--navy); text-decoration: none; }
+
+    /* ---- hero ---- */
+    .hero {
+      background: linear-gradient(160deg, var(--navy), var(--navy-deep));
+      color: #fff;
+      padding: 4rem 1.5rem 3.5rem;
+      text-align: center;
+    }
+    .hero .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--teal);
+      margin-bottom: 0.9rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.7rem;
+    }
+    .hero p {
+      color: #C6D3E0;
+      font-size: 1.1rem;
+      max-width: 34rem;
+      margin: 0 auto;
+    }
+
+    main { max-width: 940px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ---- contact card ---- */
+    .contact {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem;
+      margin: -2.25rem auto 3.5rem;
+      max-width: 620px;
+      text-align: center;
+      box-shadow: 0 14px 40px rgba(20, 43, 68, 0.10);
+      position: relative;
+    }
+    .contact h2 { font-size: 1.3rem; color: var(--navy); margin-bottom: 0.4rem; }
+    .contact p { color: var(--muted); margin-bottom: 1.4rem; }
+    .btn {
+      display: inline-block;
+      background: var(--teal);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.85rem 1.8rem;
+      border-radius: 12px;
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .btn:hover { background: var(--teal-ink); text-decoration: none; transform: translateY(-1px); }
+    .response { margin-top: 1rem; font-size: 0.88rem; color: var(--muted); }
+
+    /* ---- FAQ ---- */
+    section.faq { margin-bottom: 4rem; }
+    section.faq > h2 {
+      font-size: 1.5rem;
+      color: var(--navy);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+    details {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 0.25rem 1.4rem;
+      margin-bottom: 0.9rem;
+      transition: border-color 0.15s ease;
+    }
+    details[open] { border-color: var(--teal); }
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--ink);
+      padding: 1.05rem 0;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      color: var(--teal-ink);
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+    details[open] summary::after { transform: rotate(45deg); }
+    details p { color: var(--muted); padding: 0 0 1.15rem; }
+    details p + p { padding-top: 0; }
+
+    /* ---- footer ---- */
+    footer {
+      background: var(--navy-deep);
+      color: #A9BACB;
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      font-size: 0.9rem;
+    }
+    footer .brand-f { color: #fff; font-weight: 700; margin-bottom: 0.5rem; }
+    footer a { color: var(--teal); }
+    footer .links { margin: 0.75rem 0; }
+    footer .links a { margin: 0 0.6rem; }
+    footer .fine { margin-top: 0.75rem; font-size: 0.8rem; color: #6E8095; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="bar">
+      <span class="brand"><span class="mark"></span>HOAHub</span>
+      <nav>
+        <a href="./">Home</a>
+        <a href="#faq">FAQ</a>
+        <a href="mailto:hello@hoahub.ph">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero">
+    <p class="eyebrow">Support</p>
+    <h1>We're here to help</h1>
+    <p>Questions about your HOA account, a feature, or something not working? Reach us directly — a real person will get back to you.</p>
+  </div>
+
+  <main>
+    <div class="contact">
+      <h2>Contact support</h2>
+      <p>Email our team and we'll help you sort it out.</p>
+      <a class="btn" href="mailto:hello@hoahub.ph?subject=HOAHub%20Support">Email hello@hoahub.ph</a>
+      <p class="response">We typically reply within 1–2 business days (Philippine time).</p>
+    </div>
+
+    <section class="faq" id="faq">
+      <h2>Frequently asked questions</h2>
+
+      <details>
+        <summary>How do I join my HOA on HOAHub?</summary>
+        <p>Your HOA administrator issues you a single-use unit access code. Open the app, create your account, and enter that code to link yourself to your unit. If you didn't receive a code, contact your HOA's admin or staff directly — codes are issued by your community, not by us.</p>
+      </details>
+
+      <details>
+        <summary>My access code isn't working.</summary>
+        <p>Access codes are single-use — once a unit is claimed, the code is consumed. If your code was already used, was mistyped, or you're not sure it's valid, ask your HOA administrator to reissue one. Double-check for lookalike characters; codes never contain the letters I or O or the digits 1 or 0.</p>
+      </details>
+
+      <details>
+        <summary>How do I reset my password?</summary>
+        <p>On the sign-in screen, tap "Forgot password" and enter your account email. You'll get a reset link. If it doesn't arrive, check your spam folder, then email us at hello@hoahub.ph.</p>
+      </details>
+
+      <details>
+        <summary>I belong to more than one community. Can I switch?</summary>
+        <p>Yes. HOAHub supports multiple properties on one account — use the property switcher in the app to move between the communities you belong to. Each community's data is kept strictly separate.</p>
+      </details>
+
+      <details>
+        <summary>How do dues and payments work in the app?</summary>
+        <p>HOAHub records your dues and lets you upload payment receipts for your HOA staff to confirm. It is a record-keeping tool — actual payments are made through your usual method (GCash, Maya, bank transfer, or cash) outside the app. HOAHub does not process payments or hold funds.</p>
+      </details>
+
+      <details>
+        <summary>Is my personal data safe?</summary>
+        <p>Yes. Access is restricted per community with role-based permissions — no one from another HOA can see your data. Information is encrypted in transit and at rest and stored securely on Google Cloud. See our Privacy Policy for full details.</p>
+      </details>
+
+      <details>
+        <summary>I found a bug or the app is behaving unexpectedly.</summary>
+        <p>Please email hello@hoahub.ph with your device model, iOS version, and a short description (a screenshot helps a lot). We'll investigate and follow up.</p>
+      </details>
+
+      <details>
+        <summary>How do I delete my account or my data?</summary>
+        <p>Email hello@hoahub.ph from your account address and we'll process the request. Some records (for example, financial/audit records held by your HOA) may be retained where required by law, as described in our Privacy Policy.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand-f">HOAHub by JGStudios</div>
+    <div>Your HOA. Fully Digital. — Built for the Philippines.</div>
+    <div class="links">
+      <a href="./">Home</a>
+      <a href="mailto:hello@hoahub.ph">hello@hoahub.ph</a>
+    </div>
+    <div class="fine">© 2026 JGStudios PH. All rights reserved.</div>
+  </footer>
+</body>
+</html>
